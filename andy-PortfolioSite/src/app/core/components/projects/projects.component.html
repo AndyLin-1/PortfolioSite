@@ -1,0 +1,34 @@
+<section class="projects">
+    <h2 class="title">My Projects</h2>
+
+    <div class="project-tabs">
+      <div *ngFor="let project of projects; let i = index" class="project-tab" (click)="selectProject(i)">
+        <h3 class="tab-title">{{project.title}}</h3>
+      </div>
+    </div>
+
+    <div class="project-content-container">
+        <div class="project-overview">
+            <h3 class="project-title">{{this.selectedProject.title}}</h3>
+            <img [src]="selectedProject.overallImage" alt="Project {{selectedProject.title}}" class="project-image">
+            <p class="project-desc">{{selectedProject.description}}</p>
+        </div>
+        <div class="project-features">
+            <h3 class="project-title">Features</h3>
+            <div class="features">
+                <div *ngFor="let features of selectedProject.features; let i = index" class="feature-item">
+                  <div class="feature-title" (click)="toggleItem(i)">
+                    {{ features.name }}
+                  </div>
+                  <div *ngIf="openItemIndex === i" class="feature-content">
+                    <img [src]="features.image" class="feature-image">
+                    <p class="feature-desc">{{features.description}}</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+  </section>
+  

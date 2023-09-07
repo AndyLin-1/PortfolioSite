@@ -1,0 +1,20 @@
+import { Component, OnInit } from '@angular/core';
+import { ProjectlistService, Project, Feature } from '../../services/projectlist.service';
+
+@Component({
+  selector: 'app-view-projects',
+  templateUrl: './view-projects.component.html',
+  styleUrls: ['./view-projects.component.css']
+})
+export class ViewProjectsComponent implements OnInit {
+
+  projects: Project[];
+
+  constructor(projectListService: ProjectlistService) { 
+    this.projects = projectListService.getProjects();
+  }
+
+  ngOnInit(): void {
+  }
+
+}

@@ -1,0 +1,17 @@
+<section class="view-projects">
+    <div class="corner-lines">
+      <h2 class="title">View My Projects</h2>
+      <div class="project-overview">
+        <div *ngFor="let index of [0, 1, 2]" class="project-item" [routerLink]="'/projects/' + (index+1)">
+            <img [src]="projects[index].overallImage" alt="Project {{projects[index].title}}" class="project-image">
+            <h3 class="project-title">{{projects[index].title}}</h3>
+            <p class="project-desc">{{projects[index].description}}</p>
+        </div>
+      </div>
+      <a routerLink="/projects" class="view-more-link">
+        <span>View More</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+  
