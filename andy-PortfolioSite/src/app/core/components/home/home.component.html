@@ -1,2 +1,10 @@
-<app-about></app-about>
-<app-view-projects></app-view-projects>
+<div class="home-container">
+    <div class="sidebar">
+        <app-side-bar (linkClicked)="scrollTo($event)" [activeElement]="this.activeElement"></app-side-bar>
+    </div>
+    <div class="content">
+        <app-about id="about"></app-about>
+        <app-view-projects id="view-project"></app-view-projects>
+        <app-experience id="experience"></app-experience>
+    </div>
+</div>

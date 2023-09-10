@@ -1,77 +1,67 @@
 .view-projects {
-    text-align: center;
-    padding: 40px;
-    margin-top: 100px;
-  }
-  
-.corner-lines {
-  background:
-    linear-gradient(to right, var(--primary-color) 4px, transparent 4px) 0 0,
-    linear-gradient(to left, var(--primary-color)  4px, transparent 4px) 100% 100%,
-    linear-gradient(to bottom, var(--primary-color)  4px, transparent 4px) 0 0,
-    linear-gradient(to top, var(--primary-color)  4px, transparent 4px) 100% 100%;
-  background-repeat: no-repeat;
-  background-size: 50px 50px;
-  padding: 20px;
-  margin: auto;
+  padding: 40px;
 }
 
-.title {
-  margin-top: 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: var(--primary-color);
+h2 {
+  color: var(--text-color);
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; 
 }
 
-.project-overview {
+.project-container {
+  border-radius: 5px;
+  border: 1px solid var(--box-color);
+  background: linear-gradient(96deg, var(--box-color) 0.67%, rgba(176, 176, 176, 0.50) 43.09%, rgba(255, 255, 255, 0.00) 100%, rgba(97, 97, 97, 0.00) 100%);
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(25px);
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.project-item {
-  flex: 1;
-  max-width: 30%;
-  margin: 15px;
-  padding: 15px;
-  background-color: var(--background-color);
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px var(--secondary-color);
-  transition: transform 0.2s ease-in-out;
+  flex-direction: row;
+  max-width: 600px;
+  max-height: 200px;
+  flex-shrink: 0;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-bottom: 5%;
 }
 
-.project-item:hover {
-  transform: translateY(-5px);
+.project-container:hover {
+  transform: translateX(10px);
 }
 
-.project-image {
-  max-width: 100%;
-  height: auto;
+.project-container img {
+  width: 248px;
+  height: 184px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  margin: 8px;
+  margin-right: 12px;
 }
 
-.project-title {
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: var(--primary-color);
+.project-container h3 {
+  color: var(--text-color);
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 0;
 }
 
-.project-desc {
-    color: var(--text-color);
+.project-container p {
+  color: var(--text-color);
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 4px;
 }
 
-.view-more-link {
-  display: inline-block;
-  margin-top: 30px;
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-  font-size: 1.2rem;
+.arrow-container svg {
+  position: absolute;
+  bottom: 0;
+  right: 0; 
+  padding: 10px;
 }
-
-.view-more-link i {
-  margin-left: 5px;
-}
-  

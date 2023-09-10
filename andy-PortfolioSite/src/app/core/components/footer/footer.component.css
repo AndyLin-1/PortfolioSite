@@ -2,5 +2,5 @@ footer {
     display: flex;
     justify-content: center;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background: none;
 }

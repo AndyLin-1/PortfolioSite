@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProjectlistService, Project, Feature } from '../../services/projectlist.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-projects',
@@ -10,33 +11,36 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class ProjectsComponent implements OnInit {
   
-  projects: Project[];
   selectedProject: Project;
   openItemIndex: number | null = null;
+  index: number = 1;
+  projectListService: ProjectlistService;
+  isDarkMode: boolean = false;
+  currentTheme: string = 'white'
 
-  constructor(projectListService: ProjectlistService, private route: ActivatedRoute, private router: Router) { 
-    this.projects = projectListService.getProjects();
-    this.selectedProject = this.projects[0];
+  constructor(projectListService: ProjectlistService, private route: ActivatedRoute, private router: Router, private themeService: ThemeService) { 
+    this.projectListService = projectListService
+    const projects = this.projectListService.getProjects();
+    this.selectedProject = projects[0];
 
     this.route.params.subscribe((params) => {
-      const index = +params['id'];
-      if(index <= 5 && index > 0) {
-        this.selectedProject = this.projects[index-1];
+      this.index = +params['id'];
+      if(this.index <= 5 && this.index > 0) {
+        this.selectedProject = projects[this.index-1];
       }
     });
   }
 
   ngOnInit(): void {
-    
-  }
-
-
-  selectProject(index: number) {
-    if (index >= 0 && index < this.projects.length) {
-      this.selectedProject = this.projects[index];
-      this.router.navigate(['/projects/' + (index+1)]);
-      this.openItemIndex = null;
-    }
+    this.themeService.getIsDarkMode().subscribe((isDarkMode) => {
+      this.isDarkMode = isDarkMode;
+      if (isDarkMode) {
+        this.currentTheme = 'white';
+      }
+      else {
+        this.currentTheme = 'black';
+      }
+    });
   }
 
   toggleItem(index: number): void {
@@ -47,6 +51,30 @@ export class ProjectsComponent implements OnInit {
       // Open the clicked item
       this.openItemIndex = index;
     }
+  }
+
+  getProjectsLength(): number {
+    return this.projectListService.getProjects().length;
+  }
+
+  getPrevIndex(): number {
+    const result = (this.index - 1) % this.getProjectsLength();
+    if(result <= 0) {
+      return this.getProjectsLength();
+    }
+    return result;
+  }
+
+  getNextIndex(): number {
+    const result = (this.index + 1) % this.getProjectsLength();
+    if(result == 0) {
+      return this.getProjectsLength();
+    }
+    return result;
+  }
+
+  resetBoard(): void {
+    this.openItemIndex = null;
   }
 
 }

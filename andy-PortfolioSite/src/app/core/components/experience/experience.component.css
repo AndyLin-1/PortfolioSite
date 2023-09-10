@@ -1,0 +1,53 @@
+.experience {
+    padding: 40px;
+}
+  
+.experience h2 {
+  color: var(--text-color);
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 20px;
+}
+
+.experience-container {
+    border-radius: 5px;
+    border: 1px solid var(--box-color);
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(25px);
+    display: flex;
+    flex-direction: column;
+    max-width: 580px;
+    max-height: 200px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.experience-container:hover {
+    transform: translate3d(5px, -5px, 5px);
+}
+
+.job-title h3 {
+    color: var(--text-color);
+    font-family: Roboto;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.job-title p {
+    color: var(--secondary-color);
+    font-family: Roboto;
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.job-description {
+    color: var(--text-color);
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 300;
+}

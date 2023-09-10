@@ -1,34 +1,31 @@
 <section class="projects">
-    <h2 class="title">My Projects</h2>
-
-    <div class="project-tabs">
-      <div *ngFor="let project of projects; let i = index" class="project-tab" (click)="selectProject(i)">
-        <h3 class="tab-title">{{project.title}}</h3>
+  <div class="main-container">
+    <div class="project-container">
+      <div class="project-overview">
+        <h2 class="project-title">{{selectedProject.title}}</h2>
+        <img [src]="selectedProject.overallImage" class="project-image">
+        <p class="project-desc">{{selectedProject.description}}</p>
+      </div>  
+      <div class="project-features">
+        <div *ngFor="let features of selectedProject.features; let i = index" class="feature-item">
+          <div class="feature-title" (click)="toggleItem(i)">
+            {{ features.name }}
+          </div>
+          <div *ngIf="openItemIndex === i" class="feature-content">
+            <img [src]="features.image" class="feature-image">
+            <p class="feature-desc">{{features.description}}</p>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="project-content-container">
-        <div class="project-overview">
-            <h3 class="project-title">{{this.selectedProject.title}}</h3>
-            <img [src]="selectedProject.overallImage" alt="Project {{selectedProject.title}}" class="project-image">
-            <p class="project-desc">{{selectedProject.description}}</p>
-        </div>
-        <div class="project-features">
-            <h3 class="project-title">Features</h3>
-            <div class="features">
-                <div *ngFor="let features of selectedProject.features; let i = index" class="feature-item">
-                  <div class="feature-title" (click)="toggleItem(i)">
-                    {{ features.name }}
-                  </div>
-                  <div *ngIf="openItemIndex === i" class="feature-content">
-                    <img [src]="features.image" class="feature-image">
-                    <p class="feature-desc">{{features.description}}</p>
-                  </div>
-                </div>
-              </div>
-        </div>
+    <div class="controls-container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none" [routerLink]="'/projects/' + getPrevIndex()" (click)="resetBoard()">
+        <path d="M18.5014 7.96259C18.5014 7.56476 18.3433 7.18323 18.062 6.90193C17.7807 6.62062 17.3992 6.46259 17.0014 6.46259H5.12137L9.06137 2.52259C9.32633 2.23824 9.47057 1.86215 9.46372 1.47354C9.45686 1.08494 9.29944 0.714172 9.02461 0.439346C8.74978 0.16452 8.37901 0.00709437 7.99041 0.000237942C7.60181 -0.00661849 7.22572 0.137629 6.94137 0.402589L0.441366 6.90259C0.160465 7.18384 0.00268555 7.56509 0.00268555 7.96259C0.00268555 8.36009 0.160465 8.74134 0.441366 9.02259L6.94137 15.5226C7.07869 15.67 7.24429 15.7882 7.42829 15.8702C7.61229 15.9521 7.81091 15.9962 8.01232 15.9998C8.21373 16.0033 8.41378 15.9663 8.60056 15.8908C8.78734 15.8154 8.957 15.7031 9.09944 15.5607C9.24188 15.4182 9.35417 15.2486 9.42961 15.0618C9.50505 14.875 9.5421 14.6749 9.53855 14.4735C9.53499 14.2721 9.49091 14.0735 9.40893 13.8895C9.32694 13.7055 9.20874 13.5399 9.06137 13.4026L5.12137 9.46259H17.0014C17.8294 9.46259 18.5014 8.79059 18.5014 7.96259Z" [attr.fill]="currentTheme"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none" [routerLink]="'/projects/' + getNextIndex()" (click)="resetBoard()">
+        <path d="M0.50132 8.03742C0.50132 8.43525 0.659355 8.81678 0.94066 9.09808C1.22197 9.37939 1.60349 9.53742 2.00132 9.53742L13.8813 9.53742L9.94132 13.4774C9.67636 13.7618 9.53211 14.1379 9.53897 14.5265C9.54583 14.9151 9.70325 15.2858 9.97808 15.5607C10.2529 15.8355 10.6237 15.9929 11.0123 15.9998C11.4009 16.0066 11.777 15.8624 12.0613 15.5974L18.5613 9.09742C18.8422 8.81617 19 8.43492 19 8.03742C19 7.63992 18.8422 7.25867 18.5613 6.97742L12.0613 0.477422C11.924 0.330048 11.7584 0.211844 11.5744 0.12986C11.3904 0.0478762 11.1918 0.00379239 10.9904 0.000238816C10.789 -0.00331476 10.5889 0.0337343 10.4021 0.109176C10.2153 0.184618 10.0457 0.296907 9.90324 0.439345C9.76081 0.581783 9.64852 0.75145 9.57307 0.938227C9.49763 1.125 9.46058 1.32506 9.46414 1.52647C9.46769 1.72787 9.51177 1.9265 9.59376 2.1105C9.67574 2.2945 9.79395 2.4601 9.94132 2.59742L13.8813 6.53742L2.00132 6.53742C1.17332 6.53742 0.50132 7.20942 0.50132 8.03742Z" [attr.fill]="currentTheme"/>
+      </svg>
     </div>
-
-
-  </section>
+  </div>
+</section>
   

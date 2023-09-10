@@ -1,17 +1,15 @@
 <section class="view-projects">
-    <div class="corner-lines">
-      <h2 class="title">View My Projects</h2>
-      <div class="project-overview">
-        <div *ngFor="let index of [0, 1, 2]" class="project-item" [routerLink]="'/projects/' + (index+1)">
-            <img [src]="projects[index].overallImage" alt="Project {{projects[index].title}}" class="project-image">
-            <h3 class="project-title">{{projects[index].title}}</h3>
-            <p class="project-desc">{{projects[index].description}}</p>
-        </div>
-      </div>
-      <a routerLink="/projects" class="view-more-link">
-        <span>View More</span>
-        <i class="fas fa-arrow-right"></i>
-      </a>
+  <h2>My Projects</h2>
+  <div *ngFor="let project of projects; let i = index" class="project-item" [routerLink]="'/projects/' + (i+1)" class="project-container" >
+    <img [src]="project.overallImage" alt="Project {{project.title}}">
+    <div class="project-content">
+      <h3>{{project.title}}</h3>
+      <p>{{project.brief}}</p>
     </div>
-  </section>
-  
+    <div class="arrow-container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
+        <path d="M0.50132 8.03742C0.50132 8.43524 0.659355 8.81677 0.94066 9.09808C1.22197 9.37938 1.60349 9.53742 2.00132 9.53742L13.8813 9.53742L9.94132 13.4774C9.67636 13.7618 9.53211 14.1379 9.53897 14.5265C9.54583 14.9151 9.70325 15.2858 9.97808 15.5607C10.2529 15.8355 10.6237 15.9929 11.0123 15.9998C11.4009 16.0066 11.777 15.8624 12.0613 15.5974L18.5613 9.09742C18.8422 8.81617 19 8.43492 19 8.03742C19 7.63991 18.8422 7.25867 18.5613 6.97742L12.0613 0.477416C11.924 0.330043 11.7584 0.211838 11.5744 0.129854C11.3904 0.0478705 11.1918 0.00378667 10.9904 0.000233094C10.789 -0.00332048 10.5889 0.0337285 10.4021 0.109171C10.2153 0.184613 10.0457 0.296902 9.90324 0.439339C9.76081 0.581777 9.64852 0.751445 9.57307 0.938221C9.49763 1.125 9.46058 1.32506 9.46414 1.52646C9.46769 1.72787 9.51177 1.92649 9.59376 2.11049C9.67574 2.29449 9.79395 2.46009 9.94132 2.59742L13.8813 6.53742L2.00132 6.53742C1.17332 6.53742 0.50132 7.20942 0.50132 8.03742Z" [attr.fill]="currentTheme"/>
+      </svg>
+    </div>
+  </div>
+</section>

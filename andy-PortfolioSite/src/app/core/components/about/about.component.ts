@@ -9,24 +9,20 @@ import { ThemeService } from '../../services/theme.service';
 export class AboutComponent implements OnInit {
 
   isDarkMode: boolean = false;
+  currentTheme: string = 'white'
 
   constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
     this.themeService.getIsDarkMode().subscribe((isDarkMode) => {
       this.isDarkMode = isDarkMode;
+      if (isDarkMode) {
+        this.currentTheme = 'white';
+      }
+      else {
+        this.currentTheme = 'black';
+      }
     });
-  }
-
-  getIconLogo(icon: string): string {
-    var path = '../../assets/icons/' + icon;
-    if(this.isDarkMode) {
-      path += '_dark.png';
-    }
-    else {
-      path += '_light.png';
-    }
-    return path;
   }
 
 }

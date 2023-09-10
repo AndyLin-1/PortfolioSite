@@ -4,9 +4,9 @@ import { HomeComponent } from './core/components/home/home.component';
 import { ProjectsComponent } from './core/components/projects/projects.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Set the default route
-  { path: 'projects', redirectTo: 'projects/1'},
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'projects', redirectTo: 'projects/1'},
   { path: 'projects/:id', component: ProjectsComponent},
 ];
 

@@ -1,0 +1,72 @@
+.sidebar {
+    width: 50%;
+    position: sticky;
+    top: 100px;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.sidebar h2 {
+    color: var(--text-color);
+    font-family: Roboto;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.caption {
+    color: var(--text-color);
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0;
+
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.link {
+    color: var(--secondary-color);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.active-link {
+    color: var(--text-color);
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.link a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
