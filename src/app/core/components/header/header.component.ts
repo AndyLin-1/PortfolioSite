@@ -24,9 +24,9 @@ export class HeaderComponent implements OnInit {
 
   getImagePath () {
     if (this.isDarkMode == true) {
-      return "../../assets/Light.png";
+      return "./assets/Light.png";
     } 
-    return "../../assets/Dark.png";
+    return "./assets/Dark.png";
   }
 
 }

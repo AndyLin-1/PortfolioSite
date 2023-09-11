@@ -46,9 +46,11 @@
 }
 
 body {
-  margin: 0;
+  margin: auto;
   padding: 150px;
   background: var(--body-background);
   background-clip: cover;
   overscroll-behavior: none;
+  max-width: fit-content;
+  max-height: fit-content;
 }

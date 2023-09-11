@@ -4,7 +4,7 @@
 
 h2 {
   color: var(--text-color);
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -16,6 +16,7 @@ h2 {
   border: 1px solid var(--box-color);
   background: linear-gradient(96deg, var(--box-color) 0.67%, rgba(176, 176, 176, 0.50) 43.09%, rgba(255, 255, 255, 0.00) 100%, rgba(97, 97, 97, 0.00) 100%);
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(25px); /* -webkit- prefix for Safari */
   backdrop-filter: blur(25px);
   display: flex;
   flex-direction: row;
@@ -42,7 +43,7 @@ h2 {
 
 .project-container h3 {
   color: var(--text-color);
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -52,16 +53,15 @@ h2 {
 
 .project-container p {
   color: var(--text-color);
-  font-family: Roboto;
-  font-size: 20px;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   margin-top: 4px;
 }
 
 .arrow-container svg {
-  position: absolute;
-  bottom: 0;
-  right: 0; 
+  position: relative;
   padding: 10px;
+  margin-top: 165px;
 }

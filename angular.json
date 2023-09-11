@@ -13,15 +13,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/PortfolioSite",
+            "outputPath": "website",
+            "baseHref": "/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              "src/static"
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
