@@ -4,7 +4,7 @@
   
 .experience h2 {
   color: var(--text-color);
-  font-family: Roboto;
+  font-family: var(--text-font);
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;
@@ -30,7 +30,7 @@
 
 .job-title h3 {
     color: var(--text-color);
-    font-family: Roboto;
+    font-family: var(--text-font);
     font-size: 35px;
     font-weight: 700;
     margin-bottom: 0;
@@ -39,7 +39,7 @@
 
 .job-title p {
     color: var(--secondary-color);
-    font-family: Roboto;
+    font-family: var(--text-font);
     font-size: 14px;
     margin-bottom: 0;
     margin-top: 0;
@@ -47,7 +47,7 @@
 
 .job-description {
     color: var(--text-color);
-    font-family: Roboto;
-    font-size: 18px;
-    font-weight: 300;
+    font-family: var(--text-font);
+    font-size: 14px;
+    font-weight: 500;
 }

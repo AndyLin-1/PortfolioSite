@@ -9,6 +9,7 @@
   --error-color: #dc3545; 
   --opposite-color: #222222;
   --box-color: #5999b4;
+  --text-font: 'Roboto', sans-serif;
 
   /* Header styles */
   --header-background: #ffffff; 
@@ -32,6 +33,7 @@
   --error-color: #dc3545; 
   --opposite-color: #f5f5f5; 
   --box-color: #4d4d4d;
+  --text-font: 'Roboto', sans-serif;
 
   /* Header styles */
   --header-background: #333333; 
